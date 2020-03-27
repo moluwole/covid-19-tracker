@@ -22,7 +22,7 @@ def create_app():
     app_settings = app_config[os.getenv('APP_SETTINGS', "development")]
     app.config.from_object(app_settings)
 
-    app.config['SECRET_KEY'] = os.getenv("APP_KEY")
+    app.config['SECRET_KEY'] = os.getenv("APP_KEY", "o7MQ68S0TOWzURdjTktumKj37NIcI0YN5R0wiKaUd2s=")
 
     db.init_app(app)
     migrate.init_app(app)
