@@ -1,0 +1,159 @@
+{
+    "states": [
+        {
+            "state": " Abuja FCT ",
+            "count": "11"
+        },
+        {
+            "state": " Abia ",
+            "count": "0 "
+        },
+        {
+            "state": " Adamawa ",
+            "count": "0 "
+        },
+        {
+            "state": " Akwa Ibom ",
+            "count": " 0"
+        },
+        {
+            "state": " Anambra ",
+            "count": "0 "
+        },
+        {
+            "state": " Bauchi ",
+            "count": "2"
+        },
+        {
+            "state": " Bayelsa ",
+            "count": "0 "
+        },
+        {
+            "state": " Benue ",
+            "count": "0 "
+        },
+        {
+            "state": " Borno ",
+            "count": "0 "
+        },
+        {
+            "state": " Cross River ",
+            "count": "0 "
+        },
+        {
+            "state": " Delta ",
+            "count": "0 "
+        },
+        {
+            "state": " Ebonyi ",
+            "count": "0 "
+        },
+        {
+            "state": " Enugu ",
+            "count": "0"
+        },
+        {
+            "state": " Edo ",
+            "count": "1 "
+        },
+        {
+            "state": " Ekiti ",
+            "count": "1 "
+        },
+        {
+            "state": " Gombe ",
+            "count": "0 "
+        },
+        {
+            "state": " Imo ",
+            "count": "0 "
+        },
+        {
+            "state": " Jigawa ",
+            "count": "0 "
+        },
+        {
+            "state": " Kaduna ",
+            "count": "0 "
+        },
+        {
+            "state": " Kano ",
+            "count": "0 "
+        },
+        {
+            "state": " Katsina ",
+            "count": "0 "
+        },
+        {
+            "state": " Kebbi ",
+            "count": "0 "
+        },
+        {
+            "state": " Kogi ",
+            "count": "0 "
+        },
+        {
+            "state": " Kwara ",
+            "count": "0 "
+        },
+        {
+            "state": " Lagos ",
+            "count": "44 "
+        },
+        {
+            "state": "Nasarawa ",
+            "count": "0 "
+        },
+        {
+            "state": " Niger ",
+            "count": "0 "
+        },
+        {
+            "state": " Ogun ",
+            "count": "3 "
+        },
+        {
+            "state": " Ondo ",
+            "count": "0 "
+        },
+        {
+            "state": " Osun ",
+            "count": "1 "
+        },
+        {
+            "state": " Oyo ",
+            "count": "1 "
+        },
+        {
+            "state": " Plateau ",
+            "count": "0 "
+        },
+        {
+            "state": " Rivers ",
+            "count": "1"
+        },
+        {
+            "state": " Sokoto ",
+            "count": "0"
+        },
+        {
+            "state": " Taraba ",
+            "count": "0 "
+        },
+        {
+            "state": " Yobe",
+            "count": "0 "
+        },
+        {
+            "state": " Zamfara ",
+            "count": "0 "
+        }
+    ],
+    "overall": {
+        " Total Confirmed cases ": "65",
+        " Active cases ": "61",
+        "Discharged": "3",
+        "Death": "1"
+    },
+    "date": "Fri Mar 27 14:27:15 2020"
+}

@@ -1,0 +1,21 @@
+version: "3"
+services:
+  app:
+      container_name: covid-19-tracker
+      build:
+          context: .
+          dockerfile: DockerFile
+      entrypoint: ['/etc/startup.sh']
+      ports:
+          - 5001:5000
+      environment:
+        - FLASK_ENV=production
+        - FLASK_DEBUG=false
+      volumes:
+        - ${PWD}:/usr/src/www
+        - ${PWD}/logs:/tmp/logs
+      networks:
+        - host
+
+networks:
+  host:

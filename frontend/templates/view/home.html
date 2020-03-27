@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>COVID-19 Tracker</title>
+    <!-- meta -->
+    <meta name="description" content="">
+    <meta name="author" content="Oluwole Majiyagbe">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!-- styles -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://raw.githubusercontent.com/JDilleen/datatables-bulma/master/css/dataTables.bulma.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/fixedheader/3.1.2/css/fixedHeader.dataTables.min.css">
+    {% block css %}{% endblock %}
+  </head>
+
+  <body class="main">
+
+    <section class="section">
+      <div class="container">
+        <h1 class="title is-1">Coronavirus Tracker</h1>
+        <br>
+        <p id="last-updated"><em>Data was last updated at <span>{{ data.date }}</span></em></p>
+        <p>Get the raw JSON data from <a href="/json">here</a>.</p>
+      </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="title is-3">Coronavirus Nigeria Overview</h2>
+            {% for key, value in data.overall.items() %}
+                <strong>{{ key }}:</strong>&nbsp; <em>{{value}}</em>
+                <br>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="columns">
+          <div class="column is-three-quarters">
+            <section class="section">
+              <div class="container">
+                <table class="table is-fullwidth">
+                  <thead>
+                    <tr>
+                      <th>State</th>
+                      <th>Total Cases</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for res in data.states %}
+                        <tr>
+                            <td>{{ res.state }}</td>
+                            <td>{{ res.count }}</td>
+                        </tr>
+                  {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="content">
+        <div class="container">
+          <p>Developed by <a href="https://firstpavitech.com">Oluwole Majiyagbe</a>.</p>
+        </div>
+      </div>
+    </footer>
+    <!-- scripts -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script src="https://raw.githubusercontent.com/JDilleen/datatables-bulma/master/js/dataTables.bulma.js"></script>
+    <script src="https://cdn.datatables.net/fixedheader/3.1.2/js/dataTables.fixedHeader.min.js"></script>
+    {% block javascript %}{% endblock %}
+  </body>
+</html>
