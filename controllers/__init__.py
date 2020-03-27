@@ -24,6 +24,10 @@ def create_app():
 
     app.config['SECRET_KEY'] = os.getenv("APP_KEY", "o7MQ68S0TOWzURdjTktumKj37NIcI0YN5R0wiKaUd2s=")
 
+    truthy = [0, True, 'true', 'True', 'TRUE']
+
+    app.debug = True if os.getenv("APP_DEBUG") in truthy else False
+
     db.init_app(app)
     migrate.init_app(app)
     toolbar.init_app(app)
