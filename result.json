@@ -2,7 +2,7 @@
     "states": [
         {
             "state": " Abuja FCT ",
-            "count": "11"
+            "count": "14"
         },
         {
             "state": " Abia ",
@@ -122,7 +122,7 @@
         },
         {
             "state": " Oyo ",
-            "count": "1 "
+            "count": "3 "
         },
         {
             "state": " Plateau ",
@@ -150,10 +150,10 @@
         }
     ],
     "overall": {
-        " Total Confirmed cases ": "65",
-        " Active cases ": "61",
+        " Total Confirmed cases ": "70",
+        " Active cases ": "66",
         "Discharged": "3",
         "Death": "1"
     },
-    "date": "Fri Mar 27 14:27:15 2020"
+    "date": "Fri Mar 27 20:51:53 2020"
 }
