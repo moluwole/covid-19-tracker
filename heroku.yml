@@ -1,0 +1,5 @@
+build:
+  docker:
+    covid-19-tracker_app: Dockerfile
+run:
+  web: gunicorn --reload --workers=2 --bind 0.0.0.0:5000 app:app
