@@ -19,6 +19,8 @@ RUN pip install -r requirements.txt
 
 COPY . /usr/src/www
 
+COPY .env.example .env
+
 RUN scrapy runspider covidScrapper/spiders/crawler.py
 
 COPY ./services/supervisord.conf /etc/supervisor/supervisord.conf
