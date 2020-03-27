@@ -12,6 +12,10 @@ class Config(object):
 
     if not os.path.exists(env_file):
         env_file = os.path.join(os.path.abspath("."), ".env")
+
+    if not os.path.exists(env_file):
+        subprocess.call(['cp', '.env.example', '.env'])
+
     key = b64encode(os.urandom(32)).decode("utf-8")
 
     with open(env_file, "r") as file:
