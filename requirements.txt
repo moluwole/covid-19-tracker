@@ -3,5 +3,6 @@ Flask-DebugToolbar==0.11.0
 Flask-Migrate==2.5.3
 Flask-RESTful==0.3.8
 Flask-SQLAlchemy==2.4.1
+gunicorn==20.0.4
 python-dotenv==0.12.0
 Scrapy==2.0.1
