@@ -4,7 +4,7 @@ services:
       container_name: covid-19-tracker
       build:
           context: .
-          dockerfile: DockerFile
+          dockerfile: Dockerfile
       entrypoint: ['/etc/startup.sh']
       ports:
           - 5001:5000
