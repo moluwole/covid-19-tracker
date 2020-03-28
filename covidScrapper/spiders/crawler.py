@@ -1,6 +1,8 @@
 import scrapy
 import json
 
+from scrapy.crawler import CrawlerProcess
+
 from datetime import datetime
 
 
@@ -42,4 +44,10 @@ class ScrapeNigeriaData(scrapy.Spider):
             json.dump(all_result, file, ensure_ascii=False, indent=4)
 
 
+if __name__ == '__main__':
+    process = CrawlerProcess({
+        'USER_AGENT': 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1)'
+    })
 
+    process.crawl(ScrapeNigeriaData)
+    process.start()

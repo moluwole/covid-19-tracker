@@ -50,11 +50,11 @@
         },
         {
             "state": " Enugu ",
-            "count": "0"
+            "count": "2"
         },
         {
             "state": " Edo ",
-            "count": "1 "
+            "count": "2 "
         },
         {
             "state": " Ekiti ",
@@ -98,7 +98,7 @@
         },
         {
             "state": " Lagos ",
-            "count": "44 "
+            "count": "52 "
         },
         {
             "state": "Nasarawa ",
@@ -150,10 +150,9 @@
         }
     ],
     "overall": {
-        " Total Confirmed cases ": "70",
-        " Active cases ": "66",
+        " Total Confirmed cases ": "81",
         "Discharged": "3",
         "Death": "1"
     },
-    "date": "Fri Mar 27 20:51:53 2020"
+    "date": "Sat Mar 28 10:43:52 2020"
 }

@@ -1,12 +1,15 @@
-import os
-
+from apscheduler.schedulers.blocking import BlockingScheduler
 from subprocess import call
-from controllers import crontab
+
+scheduler = BlockingScheduler()
 
 
-@crontab.job(minute=30)
+@scheduler.scheduled_job('interval', minutes=30)
 def crawl_ncdc() -> None:
     """
     Crawl the NCDC website every 30 minutes with Scrapy
     """
-    call(['scrapy', 'runspider', 'covidScrapper/spiders/crawler.py'])
+    call(['python', 'covidScrapper/spiders/crawler.py'])
+
+
+scheduler.start()
