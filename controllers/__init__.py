@@ -4,12 +4,14 @@ from flask import Flask, render_template
 from flask_debugtoolbar import DebugToolbarExtension
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
+from flask_crontab import Crontab
 
 from core.config import app_config
 
 toolbar = DebugToolbarExtension()
 db = SQLAlchemy()
 migrate = Migrate()
+crontab = Crontab()
 
 
 def create_app():
@@ -31,6 +33,7 @@ def create_app():
     db.init_app(app)
     migrate.init_app(app)
     toolbar.init_app(app)
+    crontab.init_app(app)
 
     #########       BLUEPRINTS      ############
     from views.routes import route
