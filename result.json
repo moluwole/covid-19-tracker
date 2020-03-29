@@ -2,7 +2,7 @@
     "states": [
         {
             "state": " Abuja FCT ",
-            "count": "14"
+            "count": "16"
         },
         {
             "state": " Abia ",
@@ -30,7 +30,7 @@
         },
         {
             "state": " Benue ",
-            "count": "0 "
+            "count": "1 "
         },
         {
             "state": " Borno ",
@@ -74,7 +74,7 @@
         },
         {
             "state": " Kaduna ",
-            "count": "0 "
+            "count": "1 "
         },
         {
             "state": " Kano ",
@@ -98,7 +98,7 @@
         },
         {
             "state": " Lagos ",
-            "count": "52 "
+            "count": "59 "
         },
         {
             "state": "Nasarawa ",
@@ -118,11 +118,11 @@
         },
         {
             "state": " Osun ",
-            "count": "1 "
+            "count": "2 "
         },
         {
             "state": " Oyo ",
-            "count": "3 "
+            "count": "7 "
         },
         {
             "state": " Plateau ",
@@ -150,9 +150,9 @@
         }
     ],
     "overall": {
-        " Total Confirmed cases ": "81",
+        " Total Confirmed cases ": "97",
         "Discharged": "3",
         "Death": "1"
     },
-    "date": "Sat Mar 28 10:43:52 2020"
+    "date": "Sun Mar 29 08:29:44 2020"
 }
