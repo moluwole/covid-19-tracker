@@ -5,7 +5,7 @@ scheduler = BlockingScheduler()
 
 
 @scheduler.scheduled_job('interval', minutes=30)
-def crawl_ncdc() -> None:
+def crawl_ncdc():
     """
     Crawl the NCDC website every 30 minutes with Scrapy
     """
