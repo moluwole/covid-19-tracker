@@ -6,7 +6,7 @@ import logging
 scheduler = BlockingScheduler()
 
 
-@scheduler.scheduled_job('interval', minutes=30)
+@scheduler.scheduled_job('interval', minutes=20)
 def crawl_ncdc():
     """
     Crawl the NCDC website every 30 minutes with Scrapy
