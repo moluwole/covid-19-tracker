@@ -53,7 +53,7 @@ class ScrapeNigeriaData(scrapy.Spider):
 
                 s3_resource.Bucket("covid-19-nigeria-tracker").put_object(
                     Key="result.json",
-                    Body=bytes(json.dumps(all_result, indent=4, ensure_ascii=False)),
+                    Body=bytes(json.dumps(all_result, indent=4, ensure_ascii=False), encoding='utf8'),
                     ACL="public-read",
                 )
             except Exception as e:
