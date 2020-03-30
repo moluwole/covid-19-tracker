@@ -15,7 +15,7 @@ def read_data_file():
             )
 
         result_file = s3_client.get_object(Bucket='covid-19-nigeria-tracker', Key='result.json')
-        return json.loads(result_file)
+        return result_file
     else:
         path = os.path.join(os.path.abspath("."), "result.json")
         with open(path, "r") as file:
