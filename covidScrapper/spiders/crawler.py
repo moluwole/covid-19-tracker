@@ -1,16 +1,18 @@
-import scrapy
 import json
-
-from scrapy.crawler import CrawlerProcess
-
+import logging
+import os
 from datetime import datetime
+
+import boto3
+import scrapy
+from scrapy.crawler import CrawlerProcess
 
 
 class ScrapeNigeriaData(scrapy.Spider):
     name = "scraper"
 
     def start_requests(self):
-        url = 'https://covid19.ncdc.gov.ng/'
+        url = "https://covid19.ncdc.gov.ng/"
         yield scrapy.Request(url=url, callback=self.parse)
 
     def parse(self, response):
@@ -26,9 +28,9 @@ class ScrapeNigeriaData(scrapy.Spider):
 
         result = []
         for row in state_data:
-            row_data = row.css('td::text').getall()
+            row_data = row.css("td::text").getall()
 
-            count = row.css('b::text').getall()
+            count = row.css("b::text").getall()
 
             if len(row_data) > 0:
                 for i in range(0, len(row_data)):
@@ -38,16 +40,34 @@ class ScrapeNigeriaData(scrapy.Spider):
         all_result = {
             "states": result,
             "overall": overall_data,
-            "date": datetime.now().strftime('%c')
+            "date": datetime.now().strftime("%c"),
         }
-        with open('result.json', 'w', encoding='utf-8') as file:
-            json.dump(all_result, file, ensure_ascii=False, indent=4)
+
+        if os.getenv("FLASK_ENV") == "production":
+            try:
+                s3_resource = boto3.resource(
+                    "s3",
+                    aws_access_key_id=os.getenv("AWS_ACCESS_KEY_ID", ""),
+                    aws_secret_access_key=os.getenv("AWS_SECRET_ACCESS_KEY"),
+                )
+
+                s3_resource.Bucket("covid-19-nigeria-tracker").put_object(
+                    Key="result.json",
+                    Body=bytes(json.dumps(all_result, indent=4, ensure_ascii=False)),
+                    ACL="public-read",
+                )
+            except Exception as e:
+                print(str(e))
+                logging.error(str(e))
+        else:
+            with open("result.json", "w", encoding="utf-8") as file:
+                json.dump(all_result, file, ensure_ascii=False, indent=4)
 
 
-if __name__ == '__main__':
-    process = CrawlerProcess({
-        'USER_AGENT': 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1)'
-    })
+if __name__ == "__main__":
+    process = CrawlerProcess(
+        {"USER_AGENT": "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1)"}
+    )
 
     process.crawl(ScrapeNigeriaData)
     process.start()

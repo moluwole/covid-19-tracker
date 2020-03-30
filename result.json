@@ -2,7 +2,7 @@
     "states": [
         {
             "state": " Abuja FCT ",
-            "count": "16"
+            "count": "21"
         },
         {
             "state": " Abia ",
@@ -98,7 +98,7 @@
         },
         {
             "state": " Lagos ",
-            "count": "59 "
+            "count": "68 "
         },
         {
             "state": "Nasarawa ",
@@ -150,9 +150,9 @@
         }
     ],
     "overall": {
-        " Total Confirmed cases ": "97",
+        " Total Confirmed cases ": "111",
         "Discharged": "3",
         "Death": "1"
     },
-    "date": "Sun Mar 29 12:48:34 2020"
+    "date": "Mon Mar 30 02:34:10 2020"
 }
