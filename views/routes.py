@@ -8,14 +8,17 @@ route = Blueprint("route", __name__)
 
 def read_data_file():
     if os.getenv('FLASK_ENV') == 'production':
-        s3_client = boto3.client(
+        try:
+            s3_client = boto3.client(
                 "s3",
                 aws_access_key_id=os.getenv("AWS_ACCESS_KEY_ID", ""),
                 aws_secret_access_key=os.getenv("AWS_SECRET_ACCESS_KEY"),
             )
 
-        result_file = s3_client.get_object(Bucket='covid-19-nigeria-tracker', Key='result.json')
-        return result_file
+            result_file = s3_client.get_object(Bucket='covid-19-nigeria-tracker', Key='result.json')
+            return json.loads(result_file['Body'].read())
+        except Exception as e:
+            print(str(e))
     else:
         path = os.path.join(os.path.abspath("."), "result.json")
         with open(path, "r") as file:
