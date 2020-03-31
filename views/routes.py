@@ -2,11 +2,21 @@ from flask import render_template, Blueprint, redirect, jsonify
 import os
 import json
 import boto3
+import redis
 
 route = Blueprint("route", __name__)
+REDIS_URL = os.getenv("REDIS_URL", 'redis://127.0.0.1:6379')
+Store = redis.Redis.from_url(REDIS_URL)
 
 
 def read_data_file():
+    data = Store.get('latest')
+    if data is None:
+        data = read_data_file_from_s3()
+    return data
+
+
+def read_data_file_from_s3():
     if os.getenv('FLASK_ENV') == 'production':
         try:
             s3_client = boto3.client(

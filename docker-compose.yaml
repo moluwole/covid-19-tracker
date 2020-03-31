@@ -11,11 +11,16 @@ services:
       environment:
         - FLASK_ENV=development
         - FLASK_DEBUG=true
+        - REDIS_URL=redis://redis_store:6379
       volumes:
         - ${PWD}:/usr/src/www
         - ${PWD}/logs:/tmp/logs
-      networks:
-        - host
+      depends_on:
+        - redis_store
+#      networks:
+#        - host
+  redis_store:
+    image: redis:latest
 
-networks:
-  host:
+#networks:
+#  host:
